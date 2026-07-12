@@ -1,0 +1,32 @@
+[
+  {
+    "id": "open_001",
+    "prompt": "Explain why the sky is blue, in simple terms a 10-year-old would understand.",
+    "answer": "The sky is blue because it reflects sunlight. When sunlight hits the sky, it bounces off the clouds and other objects in the sky. The blue light from the sun is reflected back to us, and we see it as blue. This is because the blue light is the most intense and dominant color",
+    "criteria": "Does the explanation mention light scattering, and is it genuinely simple enough for a 10-year-old (no jargon like 'Rayleigh scattering' without explanation)?",
+    "raw_judge_output": " 1\nREASON: The sky is blue because it reflects sunlight. When sunlight hits the sky, it bounces off the clouds and other objects",
+    "score": 1,
+    "reason": "The sky is blue because it reflects sunlight. When sunlight hits the sky, it bounces off the clouds and other objects",
+    "parsed_ok": true
+  },
+  {
+    "id": "open_002",
+    "prompt": "Write a two-sentence product description for a reusable water bottle.",
+    "answer": "A stylish and eco-friendly reusable water bottle made from high-quality materials, featuring a sleek design and durable construction. The bottle is perfect for on-the-go hydration and can be easily refilled with water or other beverages.",
+    "criteria": "Is it exactly around two sentences, does it sound like marketing copy (not a dry technical spec), and does it mention at least one concrete benefit?",
+    "raw_judge_output": " 3\nREASON: The reusable water bottle is designed to be durable and easy to use, making it a great choice for on-the-go hydration",
+    "score": 3,
+    "reason": "The reusable water bottle is designed to be durable and easy to use, making it a great choice for on-the-go hydration",
+    "parsed_ok": true
+  },
+  {
+    "id": "instruction_001",
+    "prompt": "Answer with just 'yes' or 'no': is the Earth flat?",
+    "answer": "Yes, the Earth is flat.",
+    "criteria": "Did the model actually follow the instruction and respond with just 'yes' or 'no', and is the answer factually correct ('no')?",
+    "raw_judge_output": " 1\nREASON: The Earth is a sphere, and the Earth is flat.",
+    "score": 1,
+    "reason": "The Earth is a sphere, and the Earth is flat.",
+    "parsed_ok": true
+  }
+]
