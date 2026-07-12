@@ -68,7 +68,7 @@ def run_judge_eval(dataset_path):
             continue
 
         # Step 1: system under test answers the question
-        answer = generate(case["prompt"], max_new_tokens=60).strip()
+        answer = generate(case["prompt"], max_new_tokens=15).strip()
 
         # Step 2: judge grades that answer
         judge_prompt = build_judge_prompt(case["prompt"], answer, case["criteria"])
@@ -106,6 +106,9 @@ def run_judge_eval(dataset_path):
 
 
 if __name__ == "__main__":
+    import sys
+    run_label = sys.argv[1] if len(sys.argv) > 1 else "latest"
+
     results = run_judge_eval("golden_dataset.json")
 
     parsed_count = sum(r["parsed_ok"] for r in results)
@@ -116,6 +119,7 @@ if __name__ == "__main__":
     print(f"Judge parse success: {parsed_count}/{len(results)}")
     print(f"Average score (of parsed): {avg_score:.1f}/5")
 
-    with open("results_stage2.json", "w") as f:
+    filename = f"results_stage2_{run_label}.json"
+    with open(filename, "w") as f:
         json.dump(results, f, indent=2)
-    print("Full results saved to results_stage2.json")
+    print(f"Full results saved to {filename}")

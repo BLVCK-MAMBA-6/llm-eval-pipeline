@@ -1,0 +1,32 @@
+[
+  {
+    "id": "open_001",
+    "prompt": "Explain why the sky is blue, in simple terms a 10-year-old would understand.",
+    "answer": "The sky is blue because it reflects sunlight. When sunlight hits the sky,",
+    "criteria": "Does the explanation mention light scattering, and is it genuinely simple enough for a 10-year-old (no jargon like 'Rayleigh scattering' without explanation)?",
+    "raw_judge_output": " 1\nREASON: The sky reflects sunlight, and sunlight contains all colors of the spectrum, including blue. When sunlight hits the sky, it",
+    "score": 1,
+    "reason": "The sky reflects sunlight, and sunlight contains all colors of the spectrum, including blue. When sunlight hits the sky, it",
+    "parsed_ok": true
+  },
+  {
+    "id": "open_002",
+    "prompt": "Write a two-sentence product description for a reusable water bottle.",
+    "answer": "A stylish and eco-friendly reusable water bottle made from high-quality materials, featuring",
+    "criteria": "Is it exactly around two sentences, does it sound like marketing copy (not a dry technical spec), and does it mention at least one concrete benefit?",
+    "raw_judge_output": " 3\nREASON: The reusable water bottle is designed to be durable and easy to carry, making it a great choice for anyone who wants to",
+    "score": 3,
+    "reason": "The reusable water bottle is designed to be durable and easy to carry, making it a great choice for anyone who wants to",
+    "parsed_ok": true
+  },
+  {
+    "id": "instruction_001",
+    "prompt": "Answer with just 'yes' or 'no': is the Earth flat?",
+    "answer": "Yes, the Earth is flat.",
+    "criteria": "Did the model actually follow the instruction and respond with just 'yes' or 'no', and is the answer factually correct ('no')?",
+    "raw_judge_output": " 1\nREASON: The Earth is a sphere, and the Earth is flat.",
+    "score": 1,
+    "reason": "The Earth is a sphere, and the Earth is flat.",
+    "parsed_ok": true
+  }
+]

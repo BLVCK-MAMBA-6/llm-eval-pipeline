@@ -94,3 +94,26 @@ truth.
   REASON text is still just the answer echoed back, not a genuine
   explanation of the error. Right verdict, unreliable justification --
   a subtly different failure than instruction_001's contradictory reasoning.
+## Stage 4 — Regression tracking
+- Diff script verified correct on identical runs first (zero false
+  positives) before testing on a genuine before/after
+- Genuine change introduced: max_new_tokens 60 -> 15 for system-under-test
+  answers (baseline=60, current=15)
+- Result: answer TEXT visibly changed (shorter, different reasoning text
+  in current run), but JUDGE SCORES stayed identical in both runs
+  (1, 3, 1 -- no change registered)
+- Interpretation: the diff script itself works correctly (accurately
+  reported "no change >= threshold"). The finding is that the JUDGE
+  is too coarse/insensitive to detect a real, meaningful difference in
+  answer quality -- consistent with all prior Stage 2 findings about
+  this judge's unreliability.
+- CLOSING TAKEAWAY: a full eval pipeline (golden dataset -> rule checks
+  -> judge scoring -> aggregated report -> regression diff) was built
+  and works correctly end to end. The most valuable result wasn't a
+  clean "everything passes" story -- it was discovering, with direct
+  evidence at every stage, exactly where and how a weak LLM judge
+  becomes unreliable: content-copying, placeholder-copying, run-on
+  generation, answer-echoing, and now score-insensitivity to real
+  changes. This mirrors why production eval systems invest in stronger,
+  separate judge models and treat judge scores as one noisy signal
+  among several, never as ground truth on their own.

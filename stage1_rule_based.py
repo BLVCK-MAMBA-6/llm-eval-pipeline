@@ -75,6 +75,9 @@ def run_rule_based_eval(dataset_path):
 
 
 if __name__ == "__main__":
+    import sys
+    run_label = sys.argv[1] if len(sys.argv) > 1 else "latest"
+
     results = run_rule_based_eval("golden_dataset.json")
 
     total = len(results)
@@ -82,6 +85,8 @@ if __name__ == "__main__":
     print(f"\n--- Summary ---")
     print(f"Rule-based checks: {passed}/{total} passed")
 
-    with open("results_stage1.json", "w") as f:
+    filename = f"results_stage1_{run_label}.json"
+    with open(filename, "w") as f:
         json.dump(results, f, indent=2)
-    print("Full results saved to results_stage1.json")
+
+
