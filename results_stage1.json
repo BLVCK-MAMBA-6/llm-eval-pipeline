@@ -1,0 +1,34 @@
+[
+  {
+    "id": "geo_001",
+    "type": "contains",
+    "prompt": "What is the capital of Nigeria?",
+    "expected": "Abuja",
+    "actual_output": " Nigeria is a country located in West Africa. The capital of Nigeria is Abuja.",
+    "passed": true
+  },
+  {
+    "id": "geo_002",
+    "type": "contains",
+    "prompt": "What is the capital of France?",
+    "expected": "Paris",
+    "actual_output": " The capital of France is Paris.",
+    "passed": true
+  },
+  {
+    "id": "math_001",
+    "type": "exact_match",
+    "prompt": "What is 7 plus 5? Answer with only the number.",
+    "expected": "12",
+    "actual_output": " 12",
+    "passed": true
+  },
+  {
+    "id": "format_001",
+    "type": "contains",
+    "prompt": "List three colors, separated by commas.",
+    "expected": ",",
+    "actual_output": " Red, Blue, Green",
+    "passed": true
+  }
+]
