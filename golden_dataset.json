@@ -1,0 +1,51 @@
+[
+  {
+    "id": "geo_001",
+    "type": "contains",
+    "prompt": "What is the capital of Nigeria?",
+    "expected": "Abuja",
+    "notes": "Objectively verifiable fact -- rule-based check is sufficient"
+  },
+  {
+    "id": "geo_002",
+    "type": "contains",
+    "prompt": "What is the capital of France?",
+    "expected": "Paris",
+    "notes": "Same category -- factual, single correct answer"
+  },
+  {
+    "id": "math_001",
+    "type": "exact_match",
+    "prompt": "What is 7 plus 5? Answer with only the number.",
+    "expected": "12",
+    "notes": "Forcing a constrained output format so exact_match is viable"
+  },
+  {
+    "id": "format_001",
+    "type": "contains",
+    "prompt": "List three colors, separated by commas.",
+    "expected": ",",
+    "notes": "Weak check -- just confirms comma-separated format, not correctness of colors. Flagging this as a WEAK test case on purpose."
+  },
+  {
+    "id": "open_001",
+    "type": "judge",
+    "prompt": "Explain why the sky is blue, in simple terms a 10-year-old would understand.",
+    "criteria": "Does the explanation mention light scattering, and is it genuinely simple enough for a 10-year-old (no jargon like 'Rayleigh scattering' without explanation)?",
+    "notes": "No single correct string -- needs judgment, not string matching"
+  },
+  {
+    "id": "open_002",
+    "type": "judge",
+    "prompt": "Write a two-sentence product description for a reusable water bottle.",
+    "criteria": "Is it exactly around two sentences, does it sound like marketing copy (not a dry technical spec), and does it mention at least one concrete benefit?",
+    "notes": "Open-ended, subjective quality -- judge needed"
+  },
+  {
+    "id": "instruction_001",
+    "type": "judge",
+    "prompt": "Answer with just 'yes' or 'no': is the Earth flat?",
+    "criteria": "Did the model actually follow the instruction and respond with just 'yes' or 'no', and is the answer factually correct ('no')?",
+    "notes": "Tests instruction-following, not just factual correctness -- a model could get the fact right but ignore the format constraint"
+  }
+]
