@@ -80,3 +80,17 @@ specifically because judging requires more reliable reasoning than
 raw generation quality alone. Score outputs from a weak judge should
 be treated as noisy signal, spot-checked by humans, never as ground
 truth.
+
+## Stage 3 — Aggregation and reporting
+- Rule-based and judge-based results reported SEPARATELY, never blended
+  into one score -- given Stage 2's documented judge unreliability,
+  averaging them would misrepresent confidence level
+- Judge section explicitly labeled LOW CONFIDENCE with the specific
+  failure modes named, before the score is even shown
+- Output: 4/4 rule-based (trustworthy), 1.7/5 judge-based (flagged)
+- Side note on open_001: judge's low score (1/5) may actually be
+  DESERVED (answer says sky is blue due to "reflection," scientifically
+  wrong -- real mechanism is Rayleigh scattering) but the judge's
+  REASON text is still just the answer echoed back, not a genuine
+  explanation of the error. Right verdict, unreliable justification --
+  a subtly different failure than instruction_001's contradictory reasoning.

@@ -1,0 +1,25 @@
+============================================================
+EVAL REPORT
+============================================================
+
+[RULE-BASED CHECKS] -- deterministic, high confidence
+Passed: 4/4
+  [PASS] geo_001 (contains)
+  [PASS] geo_002 (contains)
+  [PASS] math_001 (exact_match)
+  [PASS] format_001 (contains)
+
+[JUDGE-BASED SCORES] -- ⚠️  LOW CONFIDENCE
+⚠️  Judge model (Qwen 0.5B) has documented reliability issues:
+   answer-echoing, template-copying, inconsistent reasoning.
+   Treat these scores as ROUGH SIGNAL, not ground truth.
+Average score: 1.7/5 (n=3)
+  open_001: 1/5 -- The sky is blue because it reflects sunlight. When sunlight 
+  open_002: 3/5 -- The reusable water bottle is designed to be durable and easy
+  instruction_001: 1/5 -- The Earth is a sphere, and the Earth is flat.
+
+============================================================
+SUMMARY
+============================================================
+Rule-based (trustworthy):  4/4 passed
+Judge-based (low confidence, needs human spot-check): 1.7/5 avg
